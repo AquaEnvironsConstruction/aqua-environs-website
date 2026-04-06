@@ -40,6 +40,7 @@ export default function Priorities() {
       icon: Mountain,
       desc: 'Utilizing natural forms and engineering to stabilize slopes and protect water quality from sedimentation. Our solutions restore balance between land and water, creating elegant, secure transitions that stand the test of time.',
       img: 'https://i.imgur.com/D3MXPRY.jpg',
+      link: 'https://drive.google.com/file/d/1JZR8UgkaZeRRVffx-5-Q5kRL4MvbpDPQ/view?usp=sharing',
       tags: ['Structural Stability', 'Slope Protection']
     },
     {
