@@ -104,7 +104,7 @@ export default function Home() {
         </motion.div>
 
         {/* Recreated Award Logo */}
-        <div className="absolute bottom-10 right-10 z-20 w-[100px] md:w-[120px] opacity-90 pointer-events-none">
+        <div className="absolute bottom-10 right-10 z-20 w-[100px] md:w-[120px] opacity-90">
           <ShotcreteAwardLogo />
         </div>
       </section>

@@ -2,7 +2,12 @@ import React from 'react';
 
 export const ShotcreteAwardLogo: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <div className={`flex flex-col items-center ${className}`}>
+    <a 
+      href="https://drive.google.com/file/d/1G9_NuyG_bh1lW2bA2iIagXJhsuPOqgyi/view?usp=sharing" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className={`flex flex-col items-center hover:opacity-80 transition-opacity cursor-pointer ${className}`}
+    >
       {/* Simplified Text Content - No Background Box */}
       <div className="text-center drop-shadow-md">
         <div className="flex items-center justify-center gap-1 mb-0.5">
@@ -21,6 +26,6 @@ export const ShotcreteAwardLogo: React.FC<{ className?: string }> = ({ className
           <div className="w-0.5 h-0.5 rounded-full bg-teal-aqua" />
         </div>
       </div>
-    </div>
+    </a>
   );
 };

@@ -49,6 +49,7 @@ export default function Priorities() {
       icon: Bird,
       desc: 'Designing immersive, life-sustaining habitats that promote animal welfare and conservation education. We create environments where wildlife truly thrives, forging meaningful connections between people and the natural world.',
       img: 'https://i.imgur.com/souw1Ku.jpg',
+      link: 'https://drive.google.com/file/d/1UuJpL_zb3Kg8bVjFYmUUX1SV34rCgzaw/view?usp=sharing',
       tags: ['Conservation', 'Biodiversity']
     },
     {
