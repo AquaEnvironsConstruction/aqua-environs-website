@@ -1,8 +1,13 @@
 import { motion } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 
 export default function OurStory() {
   return (
     <div className="pt-32 pb-24">
+      <Helmet>
+        <title>Our Story | Aqua-Environs Construction</title>
+        <meta name="description" content="Learn about the history and mission of Aqua-Environs Construction. Unifying aquatic and terrestrial environments through creative design and ecological restoration." />
+      </Helmet>
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="mb-20">

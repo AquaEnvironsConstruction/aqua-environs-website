@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 export default function Partners() {
   const partners = [
@@ -10,6 +11,10 @@ export default function Partners() {
 
   return (
     <div className="pt-32 pb-24 bg-earth-beige/30">
+      <Helmet>
+        <title>Partners & Affiliations | Aqua-Environs Construction</title>
+        <meta name="description" content="Our network of industry partners and professional affiliations worldwide. Collaborating for excellence in environmental construction." />
+      </Helmet>
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-serif text-forest mb-8">Partners & Affiliations</h1>

@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 import { ExternalLink } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 export default function Portfolio() {
   const [filter, setFilter] = useState('All');
@@ -43,6 +44,10 @@ export default function Portfolio() {
 
   return (
     <div className="pt-32 pb-24 bg-white">
+      <Helmet>
+        <title>Portfolio | Aqua-Environs Construction</title>
+        <meta name="description" content="View our portfolio of completed projects including natural swimming ponds, rock work, water features, and zoological habitats." />
+      </Helmet>
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16 text-center">
           <h1 className="text-5xl md:text-7xl font-serif text-forest mb-8">Selected Projects</h1>

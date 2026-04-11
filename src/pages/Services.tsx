@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { useState } from 'react';
 import { ChevronDown, ChevronUp, Droplets, Shield, Leaf, Zap } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 export default function Services() {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
@@ -49,6 +50,10 @@ export default function Services() {
 
   return (
     <div className="pt-32 pb-24 bg-white">
+      <Helmet>
+        <title>Services | Aqua-Environs Construction</title>
+        <meta name="description" content="Explore our range of services including consultation, design, construction, and remediation for natural pools, habitats, and water features." />
+      </Helmet>
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-serif text-forest mb-6">What We Do</h1>

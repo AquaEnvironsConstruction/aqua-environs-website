@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { Shield, Palette, Mountain, Bird, Home, ExternalLink } from 'lucide-react';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 export default function Priorities() {
   const { hash } = useLocation();
@@ -65,6 +66,10 @@ export default function Priorities() {
 
   return (
     <div className="pt-32 pb-24 bg-forest text-white">
+      <Helmet>
+        <title>Our Priorities | Aqua-Environs Construction</title>
+        <meta name="description" content="Our core priorities: habitat remediation, rock work artistry, erosion control, zoological conservation, and eco-design for living spaces." />
+      </Helmet>
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-24">
           <h1 className="text-5xl md:text-7xl font-serif mb-8">Our Priorities</h1>

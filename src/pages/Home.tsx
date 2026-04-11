@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Waves, Shield, Leaf, Zap, Anchor, Compass, Settings } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ShotcreteAwardLogo } from '../components/ShotcreteAwardLogo';
 
 export default function Home() {
@@ -46,6 +47,10 @@ export default function Home() {
 
   return (
     <div className="overflow-hidden">
+      <Helmet>
+        <title>Aqua-Environs Construction | Natural Pools, Habitats & Aquatic Design</title>
+        <meta name="description" content="Professional design and construction of natural swimming pools, lagoons, habitats, water features, and ecological landscapes. Family-owned. Serving USA and New Zealand." />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">

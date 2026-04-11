@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { Phone, Mail, Send, ChevronDown, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import { useState, useRef, FormEvent, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import emailjs from '@emailjs/browser';
 
 export default function Contact() {
@@ -70,6 +71,10 @@ export default function Contact() {
 
   return (
     <div className="pt-32 pb-24 bg-white">
+      <Helmet>
+        <title>Contact | Aqua-Environs Construction</title>
+        <meta name="description" content="Get in touch with Aqua-Environs Construction for your next natural pool or habitat project. Serving the USA and New Zealand." />
+      </Helmet>
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20">
           <h1 className="text-5xl md:text-7xl font-serif text-forest mb-8">Get In Touch</h1>
