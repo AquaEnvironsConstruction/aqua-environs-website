@@ -97,9 +97,14 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 pt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40 uppercase tracking-widest">
+      <div className="max-w-7xl mx-auto px-6 pt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40 uppercase tracking-widest relative">
         <p>© {new Date().getFullYear()} AQUA-ENVIRONS Construction. All Rights Reserved.</p>
         <p>Proudly serving California & New Zealand since 2006.</p>
+        <Link 
+          to="/rock-artistry-concepts" 
+          className="absolute -bottom-4 right-6 w-2 h-2 bg-white/5 rounded-full hover:bg-teal-aqua/30 transition-colors cursor-default"
+          aria-label="Private Gallery"
+        />
       </div>
     </footer>
   );

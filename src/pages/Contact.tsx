@@ -10,7 +10,7 @@ export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [selectedService, setSelectedService] = useState('');
+  const [selectedService, setSelectedService] = useState(searchParams.get('service') || '');
 
   // Initialize EmailJS v4
   useEffect(() => {
@@ -21,10 +21,10 @@ export default function Contact() {
   // Handle query parameter for service
   useEffect(() => {
     const serviceParam = searchParams.get('service');
-    if (serviceParam) {
+    if (serviceParam && serviceParam !== selectedService) {
       setSelectedService(serviceParam);
     }
-  }, [searchParams]);
+  }, [searchParams, selectedService]);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -175,6 +175,7 @@ export default function Contact() {
                   >
                     <option value="">Select a service...</option>
                     <option value="Natural Swimming Ponds">Natural Swimming Ponds</option>
+                    <option value="Rock Work & Artistry">Rock Work & Artistry</option>
                     <option value="Lakes & Waterways">Lakes & Waterways</option>
                     <option value="Water & Fire Features">Water & Fire Features</option>
                     <option value="Habitats & Life Support">Habitats & Life Support</option>
