@@ -148,11 +148,18 @@ export default function RockArtistryConcepts() {
             <h1 className="text-5xl md:text-8xl font-serif text-white mb-8 tracking-tight">
               ROCK ARTISTRY
             </h1>
-            <div className="space-y-2">
+            <div className="space-y-2 mb-10">
               <p className="text-white/90 text-lg md:text-2xl font-light tracking-[0.2em] uppercase">
                 Where Nature Meets Modern Living
               </p>
             </div>
+            <Link 
+              to="/contact?service=Rock Work %26 Artistry" 
+              className="inline-flex items-center gap-3 px-10 py-4 bg-white text-gold-accent rounded-sm text-xs font-bold uppercase tracking-[0.2em] hover:bg-gold-accent hover:text-white transition-all group shadow-xl"
+            >
+              Get In Touch
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -366,7 +373,7 @@ export default function RockArtistryConcepts() {
             </p>
             <Link 
               to="/contact?service=Rock Work %26 Artistry" 
-              className="inline-flex items-center gap-3 px-12 py-5 bg-white text-[#2d2a26] rounded-sm text-sm font-bold uppercase tracking-[0.2em] hover:bg-[#b8a99a] transition-all group shadow-xl"
+              className="inline-flex items-center gap-3 px-12 py-5 bg-white text-gold-accent rounded-sm text-sm font-bold uppercase tracking-[0.2em] hover:bg-gold-accent hover:text-white transition-all group shadow-xl"
             >
               Start A Conversation
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
