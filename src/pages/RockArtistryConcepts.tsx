@@ -74,6 +74,29 @@ export default function RockArtistryConcepts() {
     }
   ];
 
+  const pools = [
+    {
+      img: 'https://i.imgur.com/6mdNhor.jpg',
+      caption: 'Luxury desert pool surrounded by stone walls and palm trees',
+      desc: 'Oasis-style swimming environment with integrated rock formations'
+    },
+    {
+      img: 'https://i.imgur.com/u9RTPoe.jpg',
+      caption: 'Cascading waterfall over rock formation and lush greenery',
+      desc: 'Dynamic water feature creating a natural sense of movement'
+    },
+    {
+      img: 'https://i.imgur.com/8gQPkwn.jpg',
+      caption: 'Cave pool with dramatic natural rock walls and skylight',
+      desc: 'Subterranean luxury with natural light and sculpted stone'
+    },
+    {
+      img: 'https://i.imgur.com/oEf8vhK.jpg',
+      caption: 'Modern house with natural water feature',
+      desc: 'Seamless integration of modern architecture and natural aquatic elements'
+    }
+  ];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -98,6 +121,30 @@ export default function RockArtistryConcepts() {
     }
   };
 
+  const slideFromLeftVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { 
+        duration: 1.2, 
+        ease: [0.22, 1, 0.36, 1] 
+      }
+    }
+  };
+
+  const slideFromRightVariants = {
+    hidden: { opacity: 0, x: 100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { 
+        duration: 1.2, 
+        ease: [0.22, 1, 0.36, 1] 
+      }
+    }
+  };
+
   const titleVariants = {
     hidden: { opacity: 0, x: -20 },
     visible: {
@@ -110,7 +157,7 @@ export default function RockArtistryConcepts() {
   return (
     <div className="relative bg-[#fcfaf8] text-[#2d2a26] font-sans selection:bg-teal-aqua/20">
       <Helmet>
-        <title>Rock Artistry – Concept Art | Aqua-Environs Construction</title>
+        <title>Rock Artistry – Concept Page | Aqua-Environs Construction</title>
         <meta name="description" content="Private Concept Gallery of Artificial Rock Artistry. Hyper-realistic rock features for immersive natural environments." />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
@@ -143,7 +190,7 @@ export default function RockArtistryConcepts() {
             transition={{ duration: 1.2, ease: "easeOut", delay: 0.5 }}
           >
             <span className="block text-teal-aqua uppercase tracking-[0.5em] text-xs md:text-sm font-bold mb-6">
-              Concept Art
+              Concept Page
             </span>
             <h1 className="text-5xl md:text-8xl font-serif text-white mb-8 tracking-tight">
               ROCK ARTISTRY
@@ -197,7 +244,7 @@ export default function RockArtistryConcepts() {
                 Sculpted with lightweight durable substrates, hand-applied textures, pigments, and integrated lighting or water elements — our features are lighter and more versatile than real stone, yet virtually indistinguishable to the eye and touch.
               </p>
               <p className="text-teal-aqua font-medium italic">
-                The following curated collections represent concept art designed to inspire your next bespoke project.
+                The following curated collections represent concept page designed to inspire your next bespoke project.
               </p>
             </div>
           </motion.div>
@@ -231,7 +278,7 @@ export default function RockArtistryConcepts() {
             {livingSpaces.map((item, idx) => (
               <motion.div 
                 key={idx}
-                variants={itemVariants}
+                variants={idx % 2 === 0 ? slideFromLeftVariants : slideFromRightVariants}
                 className="group"
               >
                 <div className="aspect-[4/5] overflow-hidden bg-[#e5e1dc] mb-6 rounded-sm shadow-sm relative">
@@ -244,7 +291,7 @@ export default function RockArtistryConcepts() {
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
                 </div>
                 <div className="space-y-1">
-                  <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-teal-aqua">Concept Art</p>
+                  <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-teal-aqua">Concept Page</p>
                   <h3 className="text-lg font-serif text-[#1a1a1a] mb-1">{item.caption}</h3>
                   <p className="text-sm text-[#6b655f] italic font-light">{item.desc}</p>
                 </div>
@@ -294,7 +341,7 @@ export default function RockArtistryConcepts() {
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
                 </div>
                 <div className="space-y-1">
-                  <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-teal-aqua">Concept Art</p>
+                  <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-teal-aqua">Concept Page</p>
                   <h4 className="text-sm font-serif text-[#1a1a1a] mb-1">{item.caption}</h4>
                   <p className="text-xs text-[#6b655f] italic font-light">{item.desc}</p>
                 </div>
@@ -344,9 +391,59 @@ export default function RockArtistryConcepts() {
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
                 </div>
                 <div className="space-y-1">
-                  <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-teal-aqua">Concept Art</p>
+                  <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-teal-aqua">Concept Page</p>
                   <h3 className="text-lg font-serif text-[#1a1a1a] mb-1">{item.caption}</h3>
                   <p className="text-sm text-[#6b655f] italic font-light">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Pools Section */}
+      <section className="py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            variants={titleVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-2xl md:text-4xl font-serif mb-4 uppercase tracking-widest">Pools</h2>
+            <div className="w-12 h-0.5 bg-teal-aqua mx-auto mb-6" />
+            <p className="text-[#6b655f] max-w-2xl mx-auto font-light italic">
+              Immersive aquatic environments where sculpted stone and water create a private natural sanctuary.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, margin: "-50px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
+            {pools.map((item, idx) => (
+              <motion.div 
+                key={idx}
+                variants={itemVariants}
+                className="group"
+              >
+                <div className="aspect-[2/3] overflow-hidden bg-[#e5e1dc] mb-4 rounded-sm shadow-sm relative">
+                  <img 
+                    src={item.img} 
+                    alt={item.caption}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+                </div>
+                <div className="space-y-1">
+                  <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-teal-aqua">Concept Page</p>
+                  <h4 className="text-sm font-serif text-[#1a1a1a] mb-1">{item.caption}</h4>
+                  <p className="text-xs text-[#6b655f] italic font-light">{item.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -386,7 +483,7 @@ export default function RockArtistryConcepts() {
       <footer className="py-12 px-6 border-t border-white/10 bg-[#4b4b4b]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[10px] uppercase tracking-widest text-white/60 text-center md:text-left">
-            Private Concept Gallery • All images are concept art for inspirational purposes.
+            Private Concept Gallery • All images are concept page for inspirational purposes.
           </p>
           <Link 
             to="/" 
