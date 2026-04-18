@@ -1,11 +1,16 @@
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'motion/react';
 import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function RockArtistryConcepts() {
   const heroRef = useRef(null);
+  const poolsRef = useRef(null);
+  const belowPoolsRef = useRef(null);
+  const isPoolsInView = useInView(poolsRef, { amount: 0.2 });
+  const isBelowPoolsInView = useInView(belowPoolsRef, { amount: 0.01 });
+  
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"]
@@ -155,7 +160,7 @@ export default function RockArtistryConcepts() {
   };
 
   return (
-    <div className="relative bg-[#fcfaf8] text-[#2d2a26] font-sans selection:bg-teal-aqua/20">
+    <div id="top" className="relative bg-[#fcfaf8] text-[#2d2a26] font-sans selection:bg-teal-aqua/20">
       <Helmet>
         <title>Rock Artistry – Concept Page | Aqua-Environs Construction</title>
         <meta name="description" content="Private Concept Gallery of Artificial Rock Artistry. Hyper-realistic rock features for immersive natural environments." />
@@ -402,7 +407,7 @@ export default function RockArtistryConcepts() {
       </section>
 
       {/* Pools Section */}
-      <section className="py-24 px-6">
+      <section id="pools" ref={poolsRef} className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
             variants={titleVariants}
@@ -451,6 +456,66 @@ export default function RockArtistryConcepts() {
         </div>
       </section>
 
+      {/* Bottom Area (Signature + CTA + Footer) */}
+      <div ref={belowPoolsRef}>
+        {/* Signature Highlight / Final Shot 1 */}
+        <section className="py-24 px-6 bg-[#dfd7cf]/30 border-t border-[#dfd7cf]">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 1.2 }}
+              className="flex flex-col items-center"
+            >
+              <div className="w-full max-w-5xl group">
+                <div className="aspect-video overflow-hidden bg-[#e5e1dc] mb-8 rounded-sm shadow-2xl relative">
+                  <img 
+                    src="https://i.imgur.com/dayMEpc.jpg" 
+                    alt="Hirst Natural Pool"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+                </div>
+                <div className="text-center space-y-2">
+                  <h3 className="text-2xl md:text-3xl font-serif text-[#1a1a1a]">Hirst Natural Pool</h3>
+                  <p className="text-[#6b655f] font-light tracking-widest uppercase text-xs">Grey Lynn • Auckland • NZ</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Signature Highlight / Final Shot 2 */}
+        <section className="py-24 px-6 bg-[#fcfaf8] border-t border-[#dfd7cf]">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 1.2 }}
+              className="flex flex-col items-center"
+            >
+              <div className="w-full max-w-5xl group">
+                <div className="aspect-video overflow-hidden bg-[#e5e1dc] mb-8 rounded-sm shadow-2xl relative">
+                  <img 
+                    src="https://i.imgur.com/FaLdVCQ.jpg" 
+                    alt="Sethi Pool and Rock Cliff"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+                </div>
+                <div className="text-center space-y-2">
+                  <h3 className="text-2xl md:text-3xl font-serif text-[#1a1a1a]">Sethi Pool and Rock Cliff</h3>
+                  <p className="text-[#6b655f] font-light tracking-widest uppercase text-xs">Auckland • NZ</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
       {/* Closing / CTA Section */}
       <section className="py-32 px-6 text-center bg-[#4b4b4b]">
         <div className="max-w-3xl mx-auto">
@@ -493,6 +558,35 @@ export default function RockArtistryConcepts() {
           </Link>
         </div>
       </footer>
+      </div>
+
+      {/* Floating Pools Bubble */}
+      <AnimatePresence>
+        {!isPoolsInView && (
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.8 }}
+            className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-4"
+          >
+            <a 
+              href="#pools"
+              className="flex flex-col items-center group"
+            >
+              <div className="w-14 h-14 bg-white rounded-full shadow-2xl flex items-center justify-center text-gold-accent hover:bg-gold-accent hover:text-white transition-all duration-300 border border-gold-accent/10">
+                {isBelowPoolsInView ? (
+                  <ChevronUp className="w-6 h-6 animate-bounce" />
+                ) : (
+                  <ChevronDown className="w-6 h-6 animate-bounce" />
+                )}
+              </div>
+              <span className="mt-2 text-[10px] whitespace-nowrap uppercase tracking-[0.3em] font-bold text-white drop-shadow-md bg-black/40 backdrop-blur-sm px-4 py-1.5 rounded-full transition-all border border-white/20 text-center">
+                Explore Pools
+              </span>
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
